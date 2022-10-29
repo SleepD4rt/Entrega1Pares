@@ -5,20 +5,20 @@ from django.db import models
 class Cpu(models.Model):
     model = models.CharField(max_length=20)
     brand = models.CharField(max_length=20)
-    socket = models.IntegerField()
-    frecuency = models.IntegerField()
-    boost_frec = models.IntegerField()
-    tdp = models.IntegerField()
+    socket = models.CharField(max_length=10)
+    frecuency = models.FloatField()
+    #boost_frec = models.IntegerField()
+    #tdp = models.IntegerField()
 
-class Ram_Memory(models.Model):
+class RamMemory(models.Model):
     model = models.CharField(max_length=20)
     brand = models.CharField(max_length=20)
-    frecuency = models.IntegerField()
-    memory_cl = models.IntegerField()
+    frecuency = models.FloatField()
+    #memory_cl = models.IntegerField()
 
 class Motherboard(models.Model):
     model = models.CharField(max_length=20)
     brand = models.CharField(max_length=20)
     chipset = models.CharField(max_length=20)
-    socket = models.IntegerField()
-    compatibility = models.CharField(max_length=20)
+    socket = models.CharField(max_length=20)
+    #compatibility = models.CharField(max_length=20)
