@@ -1,0 +1,107 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block search_result %}
+
+ <!-- TABLA -->
+ <!-- Si hay resultados en el buscador los presenta -->
+ {% if cpus %}
+ <div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <div class="align-items-center justify-content-between mb-1">
+            <h6 class="align-items-center">Listado de procesadores</h6>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark align-middle table-bordered table-hover mb-0" >
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Socket</th>
+                        <th scope="col">Frecuencia base</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cpu in cpus %}
+                    <tr>
+                        <td>{{ cpu.model }}</td>
+                        <td>{{ cpu.brand }}</td>
+                        <td>{{ cpu.socket }}</td>
+                        <td>{{ cpu.frecuency }}</td>
+                        {% endfor %}
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if motherboards %}
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <div class="align-items-center justify-content-between mb-1">
+            <h6 class="mb-4">Listado de Placas Madre</h6>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col">Chipset</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Socket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for motherboard in motherboards %}
+                    <tr>
+                        <td>{{ motherboard.chipset }}</td>
+                        <td>{{ motherboard.model }}</td>
+                        <td>{{ motherboard.brand }}</td>
+                        <td>{{ motherboard.socket }}</td>
+                        {% endfor %}
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if rammemorys %}
+<div class="container-fluid pt-3 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <div class="align-items-center justify-content-between mb-1">
+            <h6 class="mb-4">Listado de memorias RAM</h6>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Frecuencia base</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rammemory in rammemorys %}
+                    <tr>
+                        <td>{{ rammemory.model }}</td>
+                        <td>{{ rammemory.brand }}</td>
+                        <td>{{ rammemory.frecuency }}</td>
+                        {% endfor %}
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
