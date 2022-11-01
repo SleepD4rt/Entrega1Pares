@@ -9,7 +9,8 @@ def index(request):
         context={},
         template_name='home/index.html',
     )
-
+    
+#Error en la busqueda hay que ajustar querys, por cuestiones de tiempo no llego a ajustarlo. No busca chipset, frecuencia y socket de forma individual.
 def search(request):
     search_param = request.GET["search_param"]
     print("search: ", search_param)
