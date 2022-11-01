@@ -6,7 +6,6 @@ venv/
 *.pyc
 */__pycache__/
 x_*
-staticfiles/*
 media/*
 
 # vs code files
